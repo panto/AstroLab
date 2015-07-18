@@ -4,10 +4,11 @@
 
 {% block body %}
 <h1>Welcome to the Swetest:index page</h1>
-<pre>
-    {{ dump(swetest.response()) }}
-    {{ dump(swetest.getStatus()) }}
-    {{ dump(swetest.getOutput()) }}
-    {{ dump(swetest.lastQuery) }}
-</pre>
+<table>
+    {% for row in swetest.output %}
+    <tr>
+        <td>{{ row }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
